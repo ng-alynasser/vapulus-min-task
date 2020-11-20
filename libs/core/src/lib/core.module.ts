@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SplashScreenService } from './services';
 
 @NgModule({
   imports: [
@@ -8,4 +9,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BrowserAnimationsModule,
   ],
 })
-export class CoreModule {}
+export class CoreModule {
+  constructor(private readonly splashScreenService: SplashScreenService) {}
+}
