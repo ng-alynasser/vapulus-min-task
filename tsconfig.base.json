@@ -15,7 +15,12 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@vapulus/shared": ["libs/shared/src/index.ts"],
+      "@vapulus/core": ["libs/core/src/index.ts"],
+      "@vapulus/pages/login": ["libs/pages/login/src/index.ts"],
+      "@vapulus/pages/home": ["libs/pages/home/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

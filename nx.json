@@ -29,6 +29,18 @@
     "mini-task-e2e": {
       "tags": [],
       "implicitDependencies": ["mini-task"]
+    },
+    "shared": {
+      "tags": []
+    },
+    "core": {
+      "tags": []
+    },
+    "pages-login": {
+      "tags": []
+    },
+    "pages-home": {
+      "tags": []
     }
   }
 }

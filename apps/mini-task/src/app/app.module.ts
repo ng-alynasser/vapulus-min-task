@@ -1,12 +1,9 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
-import { AppComponent } from './app.component';
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponentModule, AppComponent } from '@vapulus/core';
 
 @NgModule({
-  declarations: [AppComponent],
-  imports: [BrowserModule],
-  providers: [],
+  imports: [AppRoutingModule, AppComponentModule],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
