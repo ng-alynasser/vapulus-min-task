@@ -1,16 +1,19 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  ChangeDetectionStrategy,
+  HostBinding,
+} from '@angular/core';
 
 @Component({
   selector: 'vapulus-illustration',
   templateUrl: './illustration.component.html',
   styleUrls: ['./illustration.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class IllustrationComponent implements OnInit {
+  @HostBinding('class.login__illustration') loginIllustrationClass = true;
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }

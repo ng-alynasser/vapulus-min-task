@@ -1,4 +1,12 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  ChangeDetectionStrategy,
+  HostBinding,
+} from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { AuthenticationService } from '@vapulus/core';
 
 @Component({
   selector: 'vapulus-form',
@@ -7,7 +15,26 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FormComponent implements OnInit {
-  constructor() {}
+  @HostBinding('class.login__form') loginFormClass = true;
+  loginForm: FormGroup;
 
-  ngOnInit(): void {}
+  constructor(
+    private readonly formBuilder: FormBuilder,
+    private readonly authService: AuthenticationService,
+    private readonly router: Router
+  ) {}
+
+  ngOnInit(): void {
+    this.loginForm = this.formBuilder.group({
+      username: ['ng.alynasser@gmail.com', Validators.required],
+      password: ['0123456789', Validators.required],
+    });
+  }
+
+  onSubmit(): void {
+    if (this.loginForm.valid) {
+      this.authService.login();
+      this.router.navigate(['/']);
+    }
+  }
 }

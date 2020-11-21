@@ -1,0 +1,55 @@
+.login {
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+
+  &__illustration {
+    display: flex;
+    align-items: center;
+    flex: 45%;
+  }
+
+  &__form {
+    flex: 55%;
+    background-color: mat-color($primary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &-wrapper {
+      width: 75%;
+      height: 75%;
+      background-color: #fff;
+      padding: 7.5% 12.5%;
+    }
+
+    &-header {
+      a {
+        display: block;
+        width: 35%;
+        margin-bottom: 3rem;
+      }
+
+      h2 {
+        font-weight: 600;
+        margin: 0;
+      }
+    }
+
+    &-body {
+      display: flex;
+      flex-direction: column;
+      padding: 2rem 0;
+    }
+
+    &-footer {
+      a {
+        color: mat-color($primary);
+      }
+
+      p {
+        margin-top: 1.5rem;
+      }
+    }
+  }
+}

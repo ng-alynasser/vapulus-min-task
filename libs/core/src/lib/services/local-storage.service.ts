@@ -10,15 +10,9 @@ export class LocalStorageService {
     localStorage.setItem(keyName, JSON.stringify(value));
   }
 
-  setForSession(key: LocalStorageKey, value: string): void {
-    const keyName = this.keyName(key);
-    sessionStorage.setItem(keyName, value);
-  }
-
   get(key: LocalStorageKey): string {
     const keyName = this.keyName(key);
-    const item =
-      sessionStorage.getItem(keyName) || localStorage.getItem(keyName);
+    const item = localStorage.getItem(keyName);
     let result: any;
 
     try {
@@ -34,7 +28,6 @@ export class LocalStorageService {
 
   remove(key: LocalStorageKey): void {
     const keyName = this.keyName(key);
-    sessionStorage.removeItem(keyName);
     localStorage.removeItem(keyName);
   }
 

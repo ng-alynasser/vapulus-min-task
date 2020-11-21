@@ -1,4 +1,44 @@
-<form>
-  <label for="">Forst</label>
-  <input type="text" />
-</form>
+<section class="login__form-wrapper">
+  <!-- start of form header-->
+  <header class="login__form-header">
+    <a href="">
+      <img src="assets/images/logo.png" alt="" />
+    </a>
+    <h2>Sign In</h2>
+    <p>Access the "Vapulus" using username and password</p>
+  </header>
+  <!-- end of form header-->
+
+  <!-- start of form body-->
+  <form
+    [formGroup]="loginForm"
+    class="login__form-body"
+    (ngSubmit)="onSubmit()"
+  >
+    <mat-form-field appearance="outline">
+      <mat-label>Username</mat-label>
+      <input
+        matInput
+        type="text"
+        placeholder="Aly Nasser"
+        formControlName="username"
+        autofocus
+      />
+      <mat-icon matPrefix>person</mat-icon>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Password</mat-label>
+      <input matInput type="password" formControlName="password" />
+      <mat-icon matPrefix>lock</mat-icon>
+    </mat-form-field>
+    <button mat-raised-button color="primary">Log In</button>
+  </form>
+  <!-- end of form body-->
+
+  <!-- start of form footer-->
+  <footer class="login__form-footer">
+    <a routerLink="/login">Forget Password?</a>
+    <p>Don't have any account? <a routerLink="/">Sign up</a></p>
+  </footer>
+  <!-- end of form footer-->
+</section>
